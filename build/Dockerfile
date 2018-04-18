@@ -224,5 +224,7 @@ RUN echo "-Dcassandra.custom_tracing_class=com.thelastpickle.cassandra.tracing.Z
 #RUN sed -i 's/level=\"DEBUG\"/level=\"TRACE\"/g' /etc/cassandra/logback.xml
 #'$i\    <logger name="org.apache.cassandra" level="TRACE"/>' /etc/cassandra/logback.xml
 
+COPY exams.sql /docker-entrypoint-initdb.d/exams.cql
+
 EXPOSE 7000 7001 7199 9042 9160
 CMD ["cassandra", "-f"]
