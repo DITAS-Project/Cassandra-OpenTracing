@@ -67,7 +67,6 @@ if [ "$1" = 'cassandra' ]; then
     esac
     echo
 	done
-
 fi
 
 exec "$@"
